@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+		<!-- MyBatis 一级缓存（MyBaits 称其为 Local Cache）无法关闭,共有两个选项，SESSION或者STATEMENT-->
+		<!--默认是SESSION级别，即在一个MyBatis会话中执行的所有语句，都会共享这一个缓存 -->
+		<!--一种是STATEMENT级别，可以理解为缓存只对当前执行的这一个Statement有效  -->
+		
+		<setting name="localCacheScope" value="SESSION"/>
+	</settings>
+
+	<plugins>
+		<plugin interceptor="com.bilin.mybatis.readwrite.common.DynamicPlugin">
+		</plugin>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="helperDialect" value="mysql" />
+		</plugin>
+	</plugins>
+</configuration>

@@ -1,0 +1,1 @@
+provides: jedispool-spring-boot-autoconfigure,jedis,spring-data-redis

@@ -1,0 +1,22 @@
+package com.bilin.web;
+
+
+import com.bilin.redis.lettucepool.RedisTemplateUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/demo")
+public class DemoController {
+
+    @Autowired
+    private RedisTemplateUtil redisTemplateUtil;
+
+    @GetMapping("/say/{key}")
+    public String sayHello(@PathVariable("key") String key) {
+        return "Say: " + redisTemplateUtil.get(key);
+    }
+}

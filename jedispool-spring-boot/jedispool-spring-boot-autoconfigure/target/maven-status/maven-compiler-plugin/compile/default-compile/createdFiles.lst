@@ -1,0 +1,4 @@
+com\bilin\redis\jedispool\JedispoolAutoConfiguration.class
+com\bilin\redis\jedispool\RedisTemplateUtil.class
+com\bilin\redis\jedispool\JedispoolProperties.class
+META-INF\spring-configuration-metadata.json

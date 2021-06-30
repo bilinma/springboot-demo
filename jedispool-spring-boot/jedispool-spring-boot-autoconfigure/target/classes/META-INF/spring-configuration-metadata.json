@@ -1,0 +1,94 @@
+{
+  "groups": [
+    {
+      "name": "spring.bilin.jedispool",
+      "type": "com.bilin.redis.jedispool.JedispoolProperties",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.bilin.jedispool.max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 300
+    },
+    {
+      "name": "spring.bilin.jedispool.max-redirects",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 3
+    },
+    {
+      "name": "spring.bilin.jedispool.max-total",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 1000
+    },
+    {
+      "name": "spring.bilin.jedispool.max-wait-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 1000
+    },
+    {
+      "name": "spring.bilin.jedispool.min-evictable-idle-time-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 300000
+    },
+    {
+      "name": "spring.bilin.jedispool.nodes",
+      "type": "java.lang.String",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": "127.0.0.1:6379"
+    },
+    {
+      "name": "spring.bilin.jedispool.num-tests-per-eviction-run",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 1024
+    },
+    {
+      "name": "spring.bilin.jedispool.password",
+      "type": "java.lang.String",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties"
+    },
+    {
+      "name": "spring.bilin.jedispool.sen-nodes",
+      "type": "java.lang.String",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": "127.0.0.1:26379"
+    },
+    {
+      "name": "spring.bilin.jedispool.sentinel",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties"
+    },
+    {
+      "name": "spring.bilin.jedispool.test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "spring.bilin.jedispool.test-while-idle",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "spring.bilin.jedispool.time-between-eviction-runs-millis",
+      "type": "java.lang.Long",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 30000
+    },
+    {
+      "name": "spring.bilin.jedispool.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bilin.redis.jedispool.JedispoolProperties",
+      "defaultValue": 5000
+    }
+  ],
+  "hints": []
+}

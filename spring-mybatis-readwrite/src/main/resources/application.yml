@@ -1,0 +1,82 @@
+﻿server: 
+  servlet: 
+    context-path: /readwrite
+  port: 8080
+      
+################### Spring配置  ###################
+spring:
+  application:
+    name: readwrite-service
+  datasource:
+    druid:
+      write-datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        name: broker_china
+        url: jdbc:mysql://localhost:3306/broker_db1?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: root
+        initialSize: 10
+        minIdle: 5
+        maxActive: 100
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 'x'
+        testWhileIdle: true
+        testOnBorrow: true
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        filters: stat,wall,log4j
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        useGlobalDataSourceStat: true
+      read-datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        name: broker_inter
+        url: jdbc:mysql://localhost:3306/broker_db2?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: root
+        initialSize: 10
+        minIdle: 5
+        maxActive: 100
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 'x'
+        testWhileIdle: true
+        testOnBorrow: true
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        filters: stat,wall,log4j
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        useGlobalDataSourceStat: true
+
+
+################### Mybatis配置  ###################
+mybatis:
+  type-aliases-package: com.bilin.mybatis.readwrite.dao
+  mapper-locations: classpath:META-INF/mapper/*.xml
+  config-location: classpath:META-INF/mybatis-config.xml
+
+################### 通用Mapper配置  ###################
+mapper:
+  mappers: com.bilin.mybatis.readwrite.dao.BaseMapper
+  not-empty: false
+  identity: MYSQL
+
+################### Mybatis Pagehelper插件配置  ###################
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+swagger:
+  ui: 
+    enable: true
+    basePackage: com.bilin.mybatis.readwrite.web
+    
